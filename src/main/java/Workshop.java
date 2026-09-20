@@ -17,28 +17,28 @@ public class Workshop {
     return Math.max(a, Math.max(b, c));
      }
 public int[] tablaMultiplicar(int numero, int limite) {
-    // 1. Crear el arreglo con el tamaño especificado por limite
+   
     int[] tabla = new int[limite];
     
-    // 2. Llenar el arreglo con las multiplicaciones
+  
     for (int i = 0; i < limite; i++) {
         tabla[i] = numero * (i + 1);
     }
     
-    // 3. Retornar el arreglo construido
+
     return tabla;
 }
 
  public int factorial(int n) {
-    // 1. Validar si el número es negativo
+  
     if (n < 0) {
         throw new IllegalArgumentException("El número debe ser mayor o igual a 0.");
     }
 
-    // 2. Variable acumuladora iniciada en 1 (0! y 1! equivalen a 1)
+ 
     int resultado = 1;
 
-    // 3. Multiplicar acumulativamente desde 2 hasta n
+
     for (int i = 2; i <= n; i++) {
         resultado *= i;
     }
@@ -46,45 +46,45 @@ public int[] tablaMultiplicar(int numero, int limite) {
     return resultado;
 }
 public boolean esPrimo(int numero) {
-    // 1. Los números menores o iguales a 1 no son primos
+
     if (numero <= 1) {
         return false;
     }
 
-    // 2. Comprobar si tiene algún divisor desde 2 hasta la raíz cuadrada de 'numero'
+  
     for (int i = 2; i * i <= numero; i++) {
         if (numero % i == 0) {
             return false; // Si se encuentra un divisor, no es primo
         }
     }
 
-    // 3. Si no se encontró ningún divisor, es primo
+    
     return true;
 }    
 
 public int[] serieFibonacci(int n) {
-    // 1. Validar que n no sea negativo
+
     if (n < 0) {
         throw new IllegalArgumentException("El número de elementos n no puede ser negativo.");
     }
 
-    // 2. Manejo de casos borde (n = 0)
+
     if (n == 0) {
         return new int[0];
     }
 
-    // 3. Crear el arreglo de tamaño n
+
     int[] fibonacci = new int[n];
 
-    // Primer término de la serie siempre es 0
+
     fibonacci[0] = 0;
 
-    // Si pidieron más de 1 término, el segundo siempre es 1
+
     if (n > 1) {
         fibonacci[1] = 1;
     }
 
-    // 4. Generar los términos restantes (desde la posición 2 en adelante)
+
     for (int i = 2; i < n; i++) {
         fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
     }
@@ -93,15 +93,15 @@ public int[] serieFibonacci(int n) {
 }
 
    public int sumaElementos(int[] arreglo) {
-    // 1. Validar si el arreglo es nulo o está vacío
+
     if (arreglo == null || arreglo.length == 0) {
         return 0;
     }
 
-    // 2. Variable acumuladora
+
     int suma = 0;
 
-    // 3. Recorrer el arreglo sumando cada valor (ciclo for-each)
+
     for (int num : arreglo) {
         suma += num;
     }
@@ -118,15 +118,15 @@ public double promedioElementos(int[] arreglo) {
 }
 
 public int encontrarElementoMayor(int[] arreglo) {
-    // 1. Validar que el arreglo no sea nulo ni esté vacío
+
     if (arreglo == null || arreglo.length == 0) {
         throw new IllegalArgumentException("El arreglo no puede ser nulo ni estar vacío.");
     }
 
-    // 2. Asumir preliminarmente que el primer elemento es el mayor
+
     int mayor = arreglo[0];
 
-    // 3. Recorrer los elementos restantes a partir del índice 1
+
     for (int i = 1; i < arreglo.length; i++) {
         if (arreglo[i] > mayor) {
             mayor = arreglo[i]; // Actualizar si encontramos uno más grande
@@ -136,12 +136,22 @@ public int encontrarElementoMayor(int[] arreglo) {
     return mayor;
 }
 
-    // Método que encuentra el elemento menor en un arreglo
-    public int encontrarElementoMenor(int[] arreglo) {
-        // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
-        return 0;
+ public int encontrarElementoMenor(int[] arreglo) {
+     if (arreglo == null || arreglo.length == 0) {
+        throw new IllegalArgumentException("El arreglo no puede ser nulo ni estar vacío.");
     }
+
+    int menor = arreglo[0];
+
+
+    for (int i = 1; i < arreglo.length; i++) {
+        if (arreglo[i] < menor) {
+            menor = arreglo[i]; // Actualizar si se encuentra un número más pequeño
+        }
+    }
+
+    return menor;
+}
 
     // Método que busca un elemento en un arreglo
     public boolean buscarElemento(int[] arreglo, int elemento) {
