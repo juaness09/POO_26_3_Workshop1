@@ -109,12 +109,15 @@ public int[] serieFibonacci(int n) {
     return suma;
 }
 
-    // Método que calcula el promedio de los elementos de un arreglo
-    public double promedioElementos(int[] arreglo) {
-        // TODO: Implementar el método para calcular el promedio de los elementos de un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
+public double promedioElementos(int[] arreglo) {
+    // 1. Validar que el arreglo no sea nulo ni esté vacío
+    if (arreglo == null || arreglo.length == 0) {
         return 0.0;
     }
+
+    // 2. Reutilizar el método sumaElementos y convertir a double para obtener decimales
+    return (double) sumaElementos(arreglo) / arreglo.length;
+}
 
     // Método que encuentra el elemento mayor en un arreglo
     public int encontrarElementoMayor(int[] arreglo) {
