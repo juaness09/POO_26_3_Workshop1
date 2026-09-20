@@ -268,7 +268,7 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         return rotado;
     }
 
-public int contarCaracteres(String cadena) {
+ public int contarCaracteres(String cadena) {
         if (cadena == null) {
             return 0;
         }
