@@ -110,21 +110,31 @@ public int[] serieFibonacci(int n) {
 }
 
 public double promedioElementos(int[] arreglo) {
-    // 1. Validar que el arreglo no sea nulo ni esté vacío
     if (arreglo == null || arreglo.length == 0) {
         return 0.0;
     }
 
-    // 2. Reutilizar el método sumaElementos y convertir a double para obtener decimales
     return (double) sumaElementos(arreglo) / arreglo.length;
 }
 
-    // Método que encuentra el elemento mayor en un arreglo
-    public int encontrarElementoMayor(int[] arreglo) {
-        // TODO: Implementar el método para encontrar el elemento mayor en un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 5.
-        return 0;
+public int encontrarElementoMayor(int[] arreglo) {
+    // 1. Validar que el arreglo no sea nulo ni esté vacío
+    if (arreglo == null || arreglo.length == 0) {
+        throw new IllegalArgumentException("El arreglo no puede ser nulo ni estar vacío.");
     }
+
+    // 2. Asumir preliminarmente que el primer elemento es el mayor
+    int mayor = arreglo[0];
+
+    // 3. Recorrer los elementos restantes a partir del índice 1
+    for (int i = 1; i < arreglo.length; i++) {
+        if (arreglo[i] > mayor) {
+            mayor = arreglo[i]; // Actualizar si encontramos uno más grande
+        }
+    }
+
+    return mayor;
+}
 
     // Método que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
