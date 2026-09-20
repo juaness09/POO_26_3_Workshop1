@@ -252,17 +252,17 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
 
         return combinado;
     }
-public int[] rotarArreglo(int[] arreglo, int posiciones) {
+   public int[] rotarArreglo(int[] arreglo, int posiciones) {
         if (arreglo == null || arreglo.length == 0) {
             return new int[0];
         }
 
         int n = arreglo.length;
-        posiciones = ((posiciones % n) + n) % n;
+        int shift = ((posiciones % n) + n) % n;
 
         int[] rotado = new int[n];
         for (int i = 0; i < n; i++) {
-            rotado[i] = arreglo[(i + posiciones) % n];
+            rotado[(i + shift) % n] = arreglo[i];
         }
 
         return rotado;
