@@ -60,13 +60,37 @@ public boolean esPrimo(int numero) {
 
     // 3. Si no se encontró ningún divisor, es primo
     return true;
-}    // Método que genera una serie de Fibonacci
-    public int[] serieFibonacci(int n) {
-        // TODO: Implementar el método para generar la serie de Fibonacci hasta el número n.
-        // Ejemplo: Si n = 5, el resultado debería ser [0, 1, 1, 2, 3].
-        // Lanzar IllegalArgumentException si n es negativo.
+}    
+
+public int[] serieFibonacci(int n) {
+    // 1. Validar que n no sea negativo
+    if (n < 0) {
+        throw new IllegalArgumentException("El número de elementos n no puede ser negativo.");
+    }
+
+    // 2. Manejo de casos borde (n = 0)
+    if (n == 0) {
         return new int[0];
     }
+
+    // 3. Crear el arreglo de tamaño n
+    int[] fibonacci = new int[n];
+
+    // Primer término de la serie siempre es 0
+    fibonacci[0] = 0;
+
+    // Si pidieron más de 1 término, el segundo siempre es 1
+    if (n > 1) {
+        fibonacci[1] = 1;
+    }
+
+    // 4. Generar los términos restantes (desde la posición 2 en adelante)
+    for (int i = 2; i < n; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+
+    return fibonacci;
+}
 
     // Método que suma todos los elementos de un arreglo
     public int sumaElementos(int[] arreglo) {
