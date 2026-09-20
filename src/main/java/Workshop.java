@@ -29,13 +29,22 @@ public int[] tablaMultiplicar(int numero, int limite) {
     return tabla;
 }
 
-    // Método que calcula el factorial de un número entero
-    public int factorial(int n) {
-        // TODO: Implementar el método para calcular el factorial de un número entero.
-        // Ejemplo: Si n = 5, el resultado debería ser 120.
-        // Lanzar IllegalArgumentException si n es negativo.
-        return 0;
+ public int factorial(int n) {
+    // 1. Validar si el número es negativo
+    if (n < 0) {
+        throw new IllegalArgumentException("El número debe ser mayor o igual a 0.");
     }
+
+    // 2. Variable acumuladora iniciada en 1 (0! y 1! equivalen a 1)
+    int resultado = 1;
+
+    // 3. Multiplicar acumulativamente desde 2 hasta n
+    for (int i = 2; i <= n; i++) {
+        resultado *= i;
+    }
+
+    return resultado;
+}
 
     // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
