@@ -16,12 +16,18 @@ public class Workshop {
     public int mayorDeTresNumeros(int a, int b, int c) {
     return Math.max(a, Math.max(b, c));
      }
-    // Método que retorna la tabla de multiplicar de un número
-    public int[] tablaMultiplicar(int numero, int limite) {
-        // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
-        // Ejemplo: Si numero = 2 y limite = 5, el resultado debería ser [2, 4, 6, 8, 10].
-        return new int[0];
+public int[] tablaMultiplicar(int numero, int limite) {
+    // 1. Crear el arreglo con el tamaño especificado por limite
+    int[] tabla = new int[limite];
+    
+    // 2. Llenar el arreglo con las multiplicaciones
+    for (int i = 0; i < limite; i++) {
+        tabla[i] = numero * (i + 1);
     }
+    
+    // 3. Retornar el arreglo construido
+    return tabla;
+}
 
     // Método que calcula el factorial de un número entero
     public int factorial(int n) {
