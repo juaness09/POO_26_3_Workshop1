@@ -275,13 +275,19 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
 
         return cadena.length();
     }
-
 public String invertirCadena(String cadena) {
         if (cadena == null) {
             return "";
         }
 
-        return new StringBuilder(cadena).reverse().toString();
+        char[] caracteres = cadena.toCharArray();
+        String resultado = "";
+
+        for (int i = caracteres.length - 1; i >= 0; i--) {
+            resultado += caracteres[i];
+        }
+
+        return resultado;
     }
 
     // Método que verifica si una cadena es un palíndromo
