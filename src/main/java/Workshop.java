@@ -252,7 +252,7 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
 
         return combinado;
     }
-   public int[] rotarArreglo(int[] arreglo, int posiciones) {
+    public int[] rotarArreglo(int[] arreglo, int posiciones) {
         if (arreglo == null || arreglo.length == 0) {
             return new int[0];
         }
