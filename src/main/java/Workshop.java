@@ -252,11 +252,20 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
 
         return combinado;
     }
-    // Método que rota un arreglo n posiciones
-    public int[] rotarArreglo(int[] arreglo, int posiciones) {
-        // TODO: Implementar el método para rotar un arreglo n posiciones.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
-        return new int[0];
+public int[] rotarArreglo(int[] arreglo, int posiciones) {
+        if (arreglo == null || arreglo.length == 0) {
+            return new int[0];
+        }
+
+        int n = arreglo.length;
+        posiciones = ((posiciones % n) + n) % n;
+
+        int[] rotado = new int[n];
+        for (int i = 0; i < n; i++) {
+            rotado[i] = arreglo[(i + posiciones) % n];
+        }
+
+        return rotado;
     }
 
     // Método que cuenta los caracteres en una cadena
