@@ -13,9 +13,9 @@ public class Workshop {
 	//return 0;
     }
 
-public int mayorDeTresNumeros(int a, int b, int c) {
+    public int mayorDeTresNumeros(int a, int b, int c) {
     return Math.max(a, Math.max(b, c));
-}
+     }
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
         // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
