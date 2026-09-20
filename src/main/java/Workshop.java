@@ -180,11 +180,24 @@ public int[] invertirArreglo(int[] arreglo) {
         return invertido;
     }
 
-    // Método que ordena un arreglo en orden ascendente
-    public int[] ordenarArreglo(int[] arreglo) {
-        // TODO: Implementar el método para ordenar un arreglo en orden ascendente.
-        // Ejemplo: Si arreglo = [5, 4, 3, 2, 1], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+public int[] ordenarArreglo(int[] arreglo) {
+        if (arreglo == null) {
+            return new int[0];
+        }
+
+        int[] ordenado = arreglo.clone();
+        
+        for (int i = 0; i < ordenado.length - 1; i++) {
+            for (int j = 0; j < ordenado.length - 1 - i; j++) {
+                if (ordenado[j] > ordenado[j + 1]) {
+                    int temp = ordenado[j];
+                    ordenado[j] = ordenado[j + 1];
+                    ordenado[j + 1] = temp;
+                }
+            }
+        }
+
+        return ordenado;
     }
 
     // Método que elimina los duplicados de un arreglo
