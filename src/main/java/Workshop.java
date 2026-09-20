@@ -179,7 +179,6 @@ public int[] invertirArreglo(int[] arreglo) {
 
         return invertido;
     }
-    }
 
     // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
