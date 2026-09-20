@@ -45,15 +45,22 @@ public int[] tablaMultiplicar(int numero, int limite) {
 
     return resultado;
 }
-
-    // Método que verifica si un número es primo
-    public boolean esPrimo(int numero) {
-        // TODO: Implementar el método para verificar si un número es primo.
-        // Ejemplo: Si numero = 7, el resultado debería ser true.
+public boolean esPrimo(int numero) {
+    // 1. Los números menores o iguales a 1 no son primos
+    if (numero <= 1) {
         return false;
     }
 
-    // Método que genera una serie de Fibonacci
+    // 2. Comprobar si tiene algún divisor desde 2 hasta la raíz cuadrada de 'numero'
+    for (int i = 2; i * i <= numero; i++) {
+        if (numero % i == 0) {
+            return false; // Si se encuentra un divisor, no es primo
+        }
+    }
+
+    // 3. Si no se encontró ningún divisor, es primo
+    return true;
+}    // Método que genera una serie de Fibonacci
     public int[] serieFibonacci(int n) {
         // TODO: Implementar el método para generar la serie de Fibonacci hasta el número n.
         // Ejemplo: Si n = 5, el resultado debería ser [0, 1, 1, 2, 3].
