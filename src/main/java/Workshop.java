@@ -294,7 +294,14 @@ public boolean esPalindromo(String cadena) {
             return false;
         }
 
-        String limpio = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String limpio = cadena.toLowerCase()
+                .replace('á', 'a')
+                .replace('é', 'e')
+                .replace('í', 'i')
+                .replace('ó', 'o')
+                .replace('ú', 'u')
+                .replaceAll("[^a-z0-9]", "");
+
         int izquierda = 0;
         int derecha = limpio.length() - 1;
 
@@ -307,6 +314,16 @@ public boolean esPalindromo(String cadena) {
         }
 
         return true;
+    }
+
+    public int contarPalabras(String cadena) {
+        if (cadena == null || cadena.trim().isEmpty()) {
+            return 0;
+        }
+
+        String[] palabras = cadena.trim().split("\\s+");
+        return palabras.length;
+    }        return true;
     }
     
 
