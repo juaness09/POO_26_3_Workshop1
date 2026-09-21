@@ -310,10 +310,12 @@ public class Workshop {
         return palabras.length;
     }
 
-    // Método que convierte una cadena a mayúsculas
+// Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
-        // TODO: Implementar el método para convertir una cadena a mayúsculas.
-        return "";
+        if (cadena == null) {
+            return null; // o return ""; según lo que requieran tus pruebas
+        }
+        return cadena.toUpperCase();
     }
 
     // Método que convierte una cadena a minúsculas
