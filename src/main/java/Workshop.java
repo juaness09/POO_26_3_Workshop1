@@ -324,17 +324,7 @@ public boolean esPalindromo(String cadena) {
         String[] palabras = cadena.trim().split("\\s+");
         return palabras.length;
     }        return true;
-    }
-    
 
-      public int contarPalabras(String cadena) {
-          if (cadena == null || cadena.trim().isEmpty()) {
-             return 0;
-         }
-
-        String[] palabras = cadena.trim().split("\\s+");
-        return palabras.length;
-    }
 
     // Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
