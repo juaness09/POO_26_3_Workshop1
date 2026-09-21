@@ -483,8 +483,11 @@ public String pptls2(String game[]) {
         return p1Gana ? "Player 1" : "Player 2";
     }
 
-    public double areaCirculo(double radio) {
-        return 0.0;
+public double areaCirculo(double radio) {
+        if (radio < 0) {
+            return 0.0;
+        }
+        return Math.PI * radio * radio;
     }
 
     public String zoodiac(int day, int month) {
