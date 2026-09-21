@@ -335,10 +335,13 @@ public class Workshop {
         return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
 
-    // Método que busca una subcadena en una cadena y retorna su índice
+// Método que busca una subcadena en una cadena y retorna su índice
     public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para buscar una subcadena en una cadena y retornar su índice.
-        return -1;
+        if (cadena == null || subcadena == null) {
+            return -1;
+        }
+        return cadena.indexOf(subcadena);
     }
 
 
