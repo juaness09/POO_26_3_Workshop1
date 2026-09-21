@@ -485,11 +485,10 @@ public String pptls2(String game[]) {
 
 public double areaCirculo(double radio) {
         if (radio < 0) {
-            throw new IllegalArgumentException("El radio no puede ser negativo");
+            return 0.0;
         }
-        return Math.PI * Math.pow(radio, 2);
+        return Math.PI * radio * radio;
     }
-
     public String zoodiac(int day, int month) {
         return "";
     }
