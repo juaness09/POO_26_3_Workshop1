@@ -308,7 +308,7 @@ public boolean esPalindromo(String cadena) {
 
         return true;
     }
-    }
+    
 
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
