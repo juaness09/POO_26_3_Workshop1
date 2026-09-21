@@ -378,12 +378,10 @@ public class Workshop {
         return suma / lista.size();
     }
 
-    // Método que convierte un número en su representación binaria
+// Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación binaria.
-        return "";
+        return Integer.toBinaryString(numero);
     }
-
     // Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
         // TODO: Implementar el método para convertir un número en su representación hexadecimal.
