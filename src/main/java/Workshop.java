@@ -361,10 +361,21 @@ public class Workshop {
         return correoLimpio.matches(regex);
     }
 
-    // Método que calcula el promedio de una lista de números
+// Método que calcula el promedio de una lista de números
     public double promedioLista(List<Integer> lista) {
         // TODO: Implementar el método para calcular el promedio de una lista de números.
-        return 0.0;
+        if (lista == null || lista.isEmpty()) {
+            return 0.0;
+        }
+
+        double suma = 0.0;
+        for (Integer num : lista) {
+            if (num != null) {
+                suma += num;
+            }
+        }
+
+        return suma / lista.size();
     }
 
     // Método que convierte un número en su representación binaria
