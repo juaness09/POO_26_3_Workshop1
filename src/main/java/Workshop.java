@@ -318,10 +318,13 @@ public class Workshop {
         return cadena.toUpperCase();
     }
 
-    // Método que convierte una cadena a minúsculas
+// Método que convierte una cadena a minúsculas
     public String convertirAMinusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a minúsculas.
-        return "";
+        if (cadena == null) {
+            return null;
+        }
+        return cadena.toLowerCase();
     }
 
     // Método que reemplaza una subcadena en una cadena por otra subcadena
