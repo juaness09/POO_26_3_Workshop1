@@ -442,8 +442,45 @@ public class Workshop {
 
         return ganaUsuario ? "Ganaste" : "Perdiste";
     }
-    public String pptls2(String game[]) {
-        return "";
+public String pptls2(String game[]) {
+        if (game == null || game.length < 2 || game[0] == null || game[1] == null) {
+            return "Empate";
+        }
+
+        String p1 = game[0].trim().toUpperCase();
+        String p2 = game[1].trim().toUpperCase();
+
+        if (p1.equals(p2)) {
+            return "Empate";
+        }
+
+        // Reglas: la clave es el movimiento y el valor contiene las opciones a las que vence
+        // R (Rock) vence a S, L
+        // P (Paper) vence a R, V
+        // S (Scissors) vence a P, L
+        // L (Lizard) vence a V, P
+        // V (Spock) vence a S, R
+        boolean p1Gana = false;
+
+        switch (p1) {
+            case "R":
+                p1Gana = p2.equals("S") || p2.equals("L");
+                break;
+            case "P":
+                p1Gana = p2.equals("R") || p2.equals("V");
+                break;
+            case "S":
+                p1Gana = p2.equals("P") || p2.equals("L");
+                break;
+            case "L":
+                p1Gana = p2.equals("V") || p2.equals("P");
+                break;
+            case "V":
+                p1Gana = p2.equals("S") || p2.equals("R");
+                break;
+        }
+
+        return p1Gana ? "Player 1" : "Player 2";
     }
 
     public double areaCirculo(double radio) {
