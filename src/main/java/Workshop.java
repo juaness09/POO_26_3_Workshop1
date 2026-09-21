@@ -382,10 +382,12 @@ public class Workshop {
     public String convertirABinario(int numero) {
         return Integer.toBinaryString(numero);
     }
-    // Método que convierte un número en su representación hexadecimal
+// Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación hexadecimal.
-        return "";
+        if (numero < 0) {
+            return "-" + Integer.toHexString(-numero).toUpperCase();
+        }
+        return Integer.toHexString(numero).toUpperCase();
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
