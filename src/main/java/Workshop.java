@@ -316,7 +316,7 @@ public boolean esPalindromo(String cadena) {
         return true;
     }
 
-    public int contarPalabras(String cadena) {
+public int contarPalabras(String cadena) {
         if (cadena == null || cadena.trim().isEmpty()) {
             return 0;
         }
@@ -325,7 +325,6 @@ public boolean esPalindromo(String cadena) {
         return palabras.length;
            return true;
 }
-
 
     // Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
@@ -431,5 +430,5 @@ Rock crushes Scissors
     }
 
 
-}
+
 
