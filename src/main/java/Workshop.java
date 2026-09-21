@@ -345,10 +345,20 @@ public class Workshop {
     }
 
 
-    // Método que valida un correo electrónico
+// Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
-        return false;
+        if (correo == null) {
+            return false;
+        }
+
+        // Limpia espacios invisibles (\u00A0) y espacios de los extremos
+        String correoLimpio = correo.replace('\u00A0', ' ').trim();
+
+        // Expresión regular estándar para la validación de correos electrónicos
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+
+        return correoLimpio.matches(regex);
     }
 
     // Método que calcula el promedio de una lista de números
