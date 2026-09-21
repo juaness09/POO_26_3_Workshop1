@@ -323,7 +323,8 @@ public boolean esPalindromo(String cadena) {
 
         String[] palabras = cadena.trim().split("\\s+");
         return palabras.length;
-    }        return true;
+           return true;
+}
 
 
     // Método que convierte una cadena a mayúsculas
