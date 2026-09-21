@@ -341,6 +341,7 @@ public class Workshop {
         return -1;
     }
 
+
     // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
