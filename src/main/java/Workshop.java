@@ -390,12 +390,58 @@ public class Workshop {
         return Integer.toHexString(numero).toUpperCase();
     }
 
-    // Método para el juego de piedra, papel, tijera, lagarto, Spock
+// Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
-        return "";
-    }
+        if (eleccionUsuario == null) {
+            return "Opción inválida";
+        }
 
+        String usuario = eleccionUsuario.trim().toLowerCase();
+        
+        // Opciones válidas en el juego
+        String[] opciones = {"piedra", "papel", "tijera", "lagarto", "spock"};
+        
+        boolean valida = false;
+        for (String op : opciones) {
+            if (op.equals(usuario)) {
+                valida = true;
+                break;
+            }
+        }
+
+        if (!valida) {
+            return "Opción inválida";
+        }
+
+        // Elección de la computadora
+        String eleccionComputadora = opciones[(int) (Math.random() * opciones.length)];
+
+        if (usuario.equals(eleccionComputadora)) {
+            return "Empate";
+        }
+
+        // Reglas de victoria para el usuario
+        boolean ganaUsuario = false;
+        switch (usuario) {
+            case "piedra":
+                ganaUsuario = eleccionComputadora.equals("tijera") || eleccionComputadora.equals("lagarto");
+                break;
+            case "papel":
+                ganaUsuario = eleccionComputadora.equals("piedra") || eleccionComputadora.equals("spock");
+                break;
+            case "tijera":
+                ganaUsuario = eleccionComputadora.equals("papel") || eleccionComputadora.equals("lagarto");
+                break;
+            case "lagarto":
+                ganaUsuario = eleccionComputadora.equals("spock") || eleccionComputadora.equals("papel");
+                break;
+            case "spock":
+                ganaUsuario = eleccionComputadora.equals("tijera") || eleccionComputadora.equals("piedra");
+                break;
+        }
+
+        return ganaUsuario ? "Ganaste" : "Perdiste";
+    }
     public String pptls2(String game[]) {
         return "";
     }
